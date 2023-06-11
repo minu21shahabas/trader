@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />        
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Document</title>
+</head>
+<style>
+    body{
+        height: 100vh;
+        background-color: rgb(122, 6, 168);
+    }
+    .nav-item a{
+        color: black;
+        font-size: 1.2rem;
+    }
+    .nav-item a:hover{
+        color: orange;
+    }
+    .text-overlay {
+  position: absolute;
+  top: 55%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  color: rgb(19, 18, 18);
+  font-size: 60px;
+  text-align: center;
+  text-shadow: 2px 2px 4px #161616;}
+@media(max-width:767px) {  /* Adjust the max-width as per your requirements */
+  .text-overlay{
+    font-size:25px !important;
+    top: 30%; /* Change the font size to your desired value */
+  }
+}
+.card{
+  background-color: rgb(52, 1, 100);
+}
+.card:hover{
+  background-color: rgb(6, 95, 18);
+}
+div.gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+  border: none;
+}
+
+div.gallery:hover {
+  border:none
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #f7f0f0;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: .5s ease;
+}
+
+.card:hover .overlay {
+  height: 100%;
+}
+
+.text {
+  color: rgb(12, 12, 12);
+  font-size: 18px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.card-img-blog{
+      height: 300px;
+    }
+    .card-blog{
+      height: 400px;
+    }
+.image{
+  opacity: 0.2;
+}
+@media (max-width: 768px) {
+    #images {
+      width: 330px; /* Set image width to 100% of the container */
+      height: 250px; /* Let the height adjust proportionally */
+      margin-top: 40px; /* Adjust the margin as per your design */
+    }
+  }
+  @media (max-width: 768px) {
+    #image {
+      width: 350px; /* Set image width to 100% of the container */
+       /* Adjust the margin as per your design */
+    }
+  }
+.cards{
+  background-color: aliceblue;
+  color: black;
+}
+</style>
+<body>
+    <div>
+        <nav class="navbar navbar-expand-md bg-light navbar-light">
+          <div>
+            <img class="img-fluid" src="https://cdn3.iconfinder.com/data/icons/trading-1/1000/icon_trading-18-512.png" style="width: 40px; height: 40px; border-radius: 50%;" class="rounded"><b style="font-size: 30px;"> MyTradings</b>
+        </div>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav  ml-auto">
+              <li class="nav-item">
+                <b><a class="nav-link" href="{% url 'homes' %}"style="margin-right: 50px;">
+                  Home
+                 </b></a>            </li>
+              <li class="nav-item">
+                <b><a class="nav-link" href="" style="margin-right: 50px;">
+                  About
+                </b></a>            </li>
+              <li class="nav-item">
+                <b><a class="nav-link" href="" style="margin-right: 50px;">
+                  Services
+                </b></a>            </li> 
+                <li class="nav-item">
+                  <b><a class="nav-link" href="{% url 'con' %}" style="margin-right: 50px;">
+                   Contact
+                  </b></a>         </li>  
+                  
+                    </div>   
+            </ul>
+          </div>  
+        </nav>
+        <div id="home">
+            <img src="https://t3.ftcdn.net/jpg/02/66/08/24/360_F_266082477_JRmLYXEFZh4YIlWTTMQMEUU5zyvj2UKB.jpg" data-aos="zoom-in" width="100%">
+            <div >
+                <span class="text-overlay" style="font-size:x-larger;">Making Your Worldwide Trading Easy</span><br>
+            </div>
+            <div class="row" style="margin-top: 2%;">
+                <div class="col-sm-12" style="margin: 0 auto;">
+                  <div class="row">
+              
+                <div class="col-sm-3 pl-4" >
+                  <div data-aos="zoom-in-up" class="card" style="width: 18rem;border-radius: 12px; border: 3px solid;  box-shadow: 4px 4px 4px rgba(247, 238, 238, 0.5);">
+                      <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Circle-icons-global.svg/1200px-Circle-icons-global.svg.png" alt="Card image cap" style="width:70px; height:70px ;padding-top: 10px; padding-left: 10px;">
+                    <div class="card-body">
+                      <h3 style="color: aliceblue;">Wide Product Range</h3>
+                      <p style="color: aliceblue;" class="card-text">Magnis etiam fusce tempus condimentum montes sodales pharetra pretium.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-3 pl-4">
+                  <div data-aos="zoom-in-up" class="card" style="width: 18rem;border-radius: 12px; border: 3px solid;box-shadow: 4px 4px 4px rgba(247, 238, 238, 0.5);">
+                    <img class="card-img-top" src="https://w7.pngwing.com/pngs/834/449/png-transparent-trading-stocks-smartphone-signal-g-trading-icon.png" alt="Card image cap"style="width:70px; height:70px ;padding-top: 10px; padding-left: 10px;">
+                    <div class="card-body">
+                      <h3 style="color: aliceblue;">Transparent Pricing</h3>
+                      <p style="color: aliceblue;" class="card-text">Magnis etiam fusce tempus condimentum montes sodales pharetra pretium.</p>
+                    </div>
+                  </div>
+                </div><div class="col-sm-3 pl-4">
+                  <div  data-aos="zoom-in-up"class="card" style="width: 18rem;border-radius: 12px; border: 3px solid;box-shadow: 4px 4px 4px rgba(247, 238, 238, 0.5);">
+                    <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAxIoqUh-2P6KuhKxlCbO_lMKkmonsjPd77g&usqp=CAU" alt="Card image cap"style="width:70px; height:70px ;padding-top: 10px; padding-left: 10px;">
+                    <div class="card-body">
+                      <h3 style="color: aliceblue;">Innovative <br>Tools</h3>
+                      <p style="color: aliceblue;" class="card-text">Magnis etiam fusce tempus condimentum montes sodales pharetra pretium.</p>
+                    </div>
+                  </div>
+                     </div>
+                     <div class="col-sm-3 pl-4">
+                  <div data-aos="zoom-in-up" class="card" style="width: 18rem;border-radius: 12px; border: 3px solid;box-shadow: 4px 4px 4px rgba(247, 238, 238, 0.5);">
+                    <img class="card-img-top" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPAAAADSCAMAAABD772dAAAAe1BMVEX///8AAACGhoZnZ2cXFxfw8PD7+/vi4uLm5ubY2Nj39/fFxcWZmZn5+fnKysqurq6Tk5N+fn6fn59gYGC0tLTT09M9PT29vb10dHRGRkanp6d4eHgbGxvj4+Pr6+tQUFAuLi6Li4tXV1cjIyM0NDQREREqKipjY2NCQkK1UME9AAAL2ElEQVR4nOWda3viKhCAW23UqFWr8X6JWtvt//+Fp9GEEJgBEoaAPe+HfbarTZgNGebG8PLSMr3BZJTs5uPxfJeMlv33tu/fJsfkcj28Cryl+2nf98gcECXdL1FWjsV04HuElBzHN4WwBbM/8qB7ydZA2ju3eeR7tNZEF1NpH2yee2ofu/XEzeg+78weftQX9y7yyffImzGFhLltZr/Lb9wf9OP4d0G+LECRZ77H3oCTrKrS+RL4YrScX6Wvfo1aH7AliSjCZqIwqnqTjjSv2xsrBZvq6Ldr/a9MhOd8eCLlNThXH5bh0AfCY566HSUdcVXcGitrVBX5w90YKRnxY17F2Nd60RD416iycl8dDpOMtXpWRpNpp/vDvnC+dmfripO45O3un/bG3RT++d4ECyJadxAvorJi8fN62+7o67PkBtupfBLtfkQxq3STCLhI2r4MdRhwQ034D0aycQHJPMm/zlktCw9imMM5+dwc7e0+TcTNOMwfqozTXR3kXiHAPUZu7Z2bSvtgf8x+6VL+Q7jrMSdZKe/6rZ68r/nSPQP/84KiXw6RzeeBcbijQmfIS3zwKZWC8kVlpvMMksaIHW+Qh/kaX9j4Cnc2WjWW93c9OnG6GrXXPHJkoyuMhYmFuBmjF/bXlVfRYFI2utx+qKmcAWalG5Kob+6B8nHmL/DeWt5fd6m0Mv1KB8Bc4NzDMbKstCyYItz5FU+i9BkeE7rZaiRTmm6eBRRhXtDl/iPN860Qlr1V+je97McG8XctN98yVmDh5XH2U8MAvAYoxuuLiI0q83WkEC0NG99ScrAlN7MB+6pR2+BbSg62eAz4H6gxCG63BHumWTyGwuCACWdOj4shJdV4FDFfvuVkMKfo3eGEfg3HZ2I6ekHhMSgIxbxclwMaupQ3mIwiszP6jkyOgm/fkuYUdvQbZ4C4IYy6vfdiON0XKa1NTBhai7n+uxfVYCkIw/RgxSv9tWqwFIx9y3qHKSoXXnCVMDLkLHrXcy1vIMZlMZqurVsolRZLhJE7LUYzs5zR6UsMl6mVnH3LmsFSwmPVUPX8yy4WqS2XN9/CZrBguV0gq0jPnJTupVdJc9gy/G0j76S8YF+RkfInZglFBGtTrWACy1KDEXhnLe5CSnhHWBzfh4AilrrqcwxWR8PK67Nt4SCaC3xbjEdoLTiYSg+iaquewIfFfpysR8t+NOyprwtp6yAiAOYCb8dLjZAVADtm70yKGhgK/FZ7iw4QTQhia4BR2O7QJIMvr05B1AGYLEvzZpeWrjPR/457cCuhYNV089U/8UpBbFzThjmae+2SEUc47ObEkJAcFpn7k3Ap/+7wcJlMNcV2VhuQhJDAv8nA76Q2SBTaxRmBgMDXquOr1tQk8W25jiCzx08szySNZJv9wlYALzb1BhkM5ZNAqzU9PON3bCwl9kp1gF67feWlL5X9gjZi1UNcl0raz0HoIzsEdVW4nmh/z9oIHUsOiWeDtsJov4BaZ2CdSe6CVoy0/4R1qxJNoSAa+vWwC0ItL9G6gTY8aehw2nDGxnKH6CZoTN5DjwBlZoUqVY8K7KH4QVXPQVbMjQpsv8bXRhHpoAsuohlYsjuYo1iI6frpYOEUH+XxsHeYOXSUCgWJifqofQC9h81L71Qn2G4A+JAvtPcwAzL7XBRSQQJ7CVBDKU0X0RdIYC8BamghduGmQgJ7aUAFBZwcDAT0iYn1hBnQQuxgSkNumZ86YmghdrCZCtLSflrWQAEnBxsEoXSsnzwxVA3uwE2F+rt4cA4zgNrIM/lNwMiKpzwx5MqQt6VMgZv4qoyHQvHU4VM4OOqpDyS0EBPvHkPyV7Q3MQb0iEn1CRIaPVPeowbwNkPCtxjzhn11nILn2xuZ2YfugvLiHGbAwyFzztHqEW97EOHhkJWto0Ekb9VLSJEv1ZxGtyJ766+FRGqpBEbTV0TXrw+SI6aKAmACeywxBe0+Mh8Rm9Ieu6oPwfwtVSQP0dJeK0zBnmhUyyQck/a9L369+fy+7jvjZDTpDx8vNVWF4P4u3mDC1+tew+qAmNtGRFfL0v+ZX1R4TJe4VkV9KzzeaZpcSxauPGd/KTJqR5LL0vLYfUNjXP7O5EVmU7GcDslViclXZn329n2ZzC+z6dpgzS5mdJDNLfM907q4x640Sn+0Wreo5Amj44FIvqNMqVyE9fVLvW4XGZ0gdqXJ5D6yqohHzkkhk/U9itdlSXYQW3gArrr5B1WVb7sC13R7E7oWB7HBAyB/xAdsUmtLFhHC6GgBkT9BzNyC/Q0tITanzSmaW8CLccPWFwcPZUrGFF4yqLiaCZyGLG8ZoAcl1px9AHEN/iyiYvcNNKv1O/cq3DZJqOqZp9BMUOIarCZ84/lerdJF9+MyHYVpXEEUpuNKfvl6QElwSF1YG8KMZSAAJQY702eYtFpYWSigcQZ8ovUWxKZgApgJCeYTl/N9mqbdzhT06oMLbBjBYnDGceTO1yHjLVBPUAtzA7dmdgPbSxpWoK4GZT7VQA2XEd8nPdgy48S24Wi9WeZFfT+3zmbO0Vn9kJmKWz2nwiopuwgpzgMcsZSN/23+1nDGM3K48KQM6QXRe8aWPlexl67FGRvNue12QXRiIaBiS153caGWonjMFxGcQ0wtNCMWdol+3n7S7Ur4R2+1OU7QusHbp7U2MJRtqM7BBzUa0Nth5+OZHE/8nCw78pbvz5nHmo0WGEy7ZZDnZ5/8Fc2sdAB6w1N/uYyVPtSTeRAfZ9srrMJonm1G1l3WcpU5qQ6nDozehcCMuFfubJ7BU3zP11vLvQB5gmITujkSl94gZkpEx3i0Xq8nv3+MJkfkGZYbDrfTcB3kiuOD1OmPxJLjwwxS1pUivE2Qgdz+XBQFEkRq3JgBxELEDi3dJKj84SnZAE1zgPIcpOm9ZGodgS+l4zC0dj/ZIx2CztJ3sXpgqakw1kkxnXmd3af1RXlOgfRE0F4n4nxVHcu1/Ujat8KGcXJJtWeDS7YS2s1GmNO61lWvh8Ucb8VNzGk07uqP3HggLiho30BBYMNTjK4zt1L3BuuZ7qiNKmJMDm1yKkxp0//QjMV84kKBH9ezBvVGYvtJbKr+VL9W+yTBW3cXEx62Fe/qPVcOccYh/cCEjfTNDl67fSQEkYRfd72psBliRgnZ9yN8y+KG3amN0PFF3RVNz0G8JNi+V1hbLQ+X//xoGBCcov3oaiDZCcDbIao2gx6wOrq17ZPTxf6u9ztLV5Z0n2iB0pzL9TWu40u/050wKy8ZwsSRAgVNy20l9sbLVc1iOSWyB9GrKAY5ckV4/rjZnq5Tg2pIHKCXW2XVkRSMQVdjc7YG85psRuXIMZrKx//ET4nPTtRqL/LjdKX9DIJE4otGfXaiZlpbHp4EId5CCHoIVhbpjL6j3Dvg4rhkIVEmNvEVijooFWaOorOIg7tJJcRSr5mqXmm4JUIJWkjh6LzzqgehNjzwHuk2IMEwV0ePVqaU3Iyksl/F/sQ5CMmkf9DYCdTwppGIX7hIbYASsBqKegEu4ePOgEfCqVH8mAPCIRS4uldlrwck0bn82MUqcQdok+jsXq/8WefgOl/qFKvTQJVI3QmdHpacqCViDpPJcTcNkZKZLh9wGcxDonjFx5qjm6wQHzF6ggQJRaAJCTgXFr4q4WDLuSqvOxV9pwjmIcmKvfL5E1FV1K7Pd3/cBTXlHh9fnA6hsi/Q5LAoKx5+Pho5enxcJ+HQAF5gikOTlTz8fPTjrvL5E8G7ba5n9MMnUiiKbKVulnAwh5vT9F63ROYTKcJzier5U1EKbBnrN+GmVhTXNgZRWnSG+VjLuykVxZAi4aCh9FIU59CT8aFWFFP3M7qMJjlflO6o75K28Fq9tvgK/6KJVrUxy4qX2EFsNkwKB8JVbCc4ikiP73G0Rh73QLsa/z3a1FlB8NBaToMdYfGINbk3cYLhET2jKF55EtKWXKVguOdcoGLsP0vmlhPXGITN8v9kWGZkxiW47+KvklVJ2dZTPhWp46RSeLgO9wdH5D4kHRaTVgJ4ATHHjh/5qyxeOv8vLv8BkZ+oJgfccyAAAAAASUVORK5CYII=" alt="Card image cap"style="width:70px; height:70px ;padding-top: 10px; padding-left: 10px;">
+                    <div class="card-body">
+                      <h3 style="color: aliceblue;">Dedicated <br> Support</h3>
+                      <p style="color: aliceblue;" class="card-text">Magnis etiam fusce tempus condimentum montes sodales pharetra pretium.</p>
+                    </div>
+                  </div>
+                     </div>
+               
+                </div>
+                
+              </div>
+              <!-- <h4 style="text-align: center; margin-top: 30px;">WHO WE ARE</h4><br> -->
+              <div style="text-align:left; margin-top: 80px; padding-left: 20px;padding-right: 20px;">
+                <h1 style="font-size: 2rem;padding-left: 20px;color: lightseagreen;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">What is GetTrade?</h1>
+                
+                <div class="AboutWrap">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-8 col-sm-12 col-xs-12">
+                        <p class="last-updated" style="color: aliceblue; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 1.25rem; margin-top: 30px; text-align: justify;">
+                          Malesuada vulputate pharetra natoque morbi id ex nec eleifend neque interdum. Cras vel scelerisque dis nisi magnis phasellus tempor. Nostra lobortis sagittis nulla finibus metus.
+                          Dis laoreet pharetra fusce feugiat est habitant diam eros senectus rhoncus. Ad suscipit curabitur primis taciti dolor.
+                        </p>
+                        <button type="button" class="btn btn-outline-info">Discover More</button>
+                      </div>
+                      
+                      <div class="col-md-4 col-sm-12 col-xs-12">
+                        <img src="https://kitnew.moxcreative.com/gettrade/wp-content/uploads/sites/8/2022/11/Ilus-3.png" width="100%" height="auto" style="margin-right: 30px;">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+    <div data-aos="fade-up" style="background-image: url('https://assets.entrepreneur.com/content/3x2/2000/1680806731-shutterstock-1940652163.jpg?format=pjeg&auto=webp&crop=4:3'); width: 100%; border-radius: 12px;">
+      <div class="row">
+        <div class="col-sm-4 ">
+          <h4 style="padding-top: 10px; padding-left: 40px; color: aliceblue; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">RELIEBALE COMPANY</h4>
+          <h1 style="padding-left: 40px;color: aliceblue; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Investments that will make you grow</h1>
+        </div>
+        <div class="col-sm-8" >
+          <p style="padding-top: 10px; padding-right: 30px; padding-left: 30px; color: aliceblue;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; text-align: justify; padding-right: 20px;">Vehicula si vel phasellus iaculis interdum ex sociosqu id. Ullamcorper habitasse litora pharetra dictum mauris at vestibulum conubia placerat. Nostra odio fames sollicitudin nisl nulla fringilla enim. Inceptos felis maximus euismod venenatis purus mattis dignissim enim. Euismod ligula ullamcorper id vel velit scelerisque gravida. Blandit senectus platea tempus eros donec.
+  
+            <br><br>Viverra bibendum platea maximus conubia dictumst lorem hendrerit euismod. Nam pretium litora vestibulum amet magna ridiculus inceptos. Interdum erat fames arcu sodales volutpat nisl mollis tincidunt pellentesque porttitor. Sociosqu venenatis suspendisse nibh eros imperdiet scelerisque. Lacus consequat natoque fames quisque placerat molestie venenatis a consectetur interdum.</p>
+        </div>
+      </div>    
+    </div>
+
+    <div>
+     
+    </div>
+     </div>
+    <h1 style="text-align: center; color: aliceblue; margin-top: 30px;" id="about">About Us</h1>
+    <div class="container">
+      <div class="row">
+          <div class="col sm-4"data-aos="flip-up">
+              <img src="https://webkit.moxcreative.com/invoux/wp-content/uploads/sites/12/2023/05/portrait-of-a-positive-successful-indian-or-arabian-trader-stock-market-broker-investor-sitting.jpg" width="450" height="350" style="margin-top: 40px;"id="images">
+          </div>
+          <div class="col sm-4">
+            <h1 style="color: aliceblue; margin-top: 20px;">Building prosperity, one investment at a time</h1>
+            <p style="color: aliceblue; text-align: justify; margin-top: 40px;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:large;">
+              Torquent pulvinar a aliquet metus cursus si etiam. Conubia aenean pulvinar laoreet tortor aptent consectetuer mauris. Praesent nunc augue magna facilisi vestibulum nam.</p>
+            <div class="row">
+              <div class="col"data-aos="fade-left">
+                <p style="color: antiquewhite;"><i class="fa-solid fa-check" style="color: yellow;"></i> Cubilia donec eleifend</p>
+                <p style="color: antiquewhite;"><i class="fa-solid fa-check" style="color: yellow;"></i> Hendrerit at litora venenatis</p>
+                <p style="color: antiquewhite;"><i class="fa-solid fa-check" style="color: yellow;"></i> Sed non nibh convallis</p>
+              </div>
+              <div class="col"data-aos="fade-right">
+                <p style="color: antiquewhite;"><i class="fa-solid fa-check" style="color: yellow;"></i> Cubilia donec eleifend</p>
+                <p style="color: antiquewhite;"><i class="fa-solid fa-check" style="color: yellow;"></i> Hendrerit at litora venenatis</p>
+                <p style="color: antiquewhite;"><i class="fa-solid fa-check" style="color: yellow;"></i> Sed non nibh convallis</p>
+              </div>
+            </div>
+          </div>
+
+      </div>
+
+   </div>
+ <div class="row" style="margin-top: 2%;">
+                <div class="col-sm-12" style="margin: 0 auto;">
+                  <div class="row" style="padding-left: 40px;">
+              
+                <div class="col-sm-4 pl-4" >
+                  <div data-aos="zoom-in-up" class="cards" style="width: 18rem;border-radius: 12px; border: 3px solid;  box-shadow: 4px 4px 4px rgba(247, 238, 238, 0.5);">
+                      <img class="card-img-top" src="https://www.pngkit.com/png/detail/416-4162393_my-investment-comments-investment-icon-png.png" alt="Card image cap" style="width:70px; height:70px ;padding-top: 10px; padding-left: 10px; margin-left:30%;">
+                    <div class="card-body">
+                      <h3 style="text-align: center;">Investing</h3>
+                      <p class="card-text" style="text-align: justify;">Tellus litora curabitur consequat risus vestibulum purus leo tempus adipiscing vitae ut neque sem.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4 pl-4">
+                  <div data-aos="zoom-in-up" class="cards" style="width: 18rem;border-radius: 12px; border: 3px solid;box-shadow: 4px 4px 4px rgba(247, 238, 238, 0.5);">
+                    <img class="card-img-top" src="https://p1.hiclipart.com/preview/925/573/196/investment-icon-workflow-icon-business-icon-statistics-icon-yellow-text-material-property-rectangle-png-clipart.jpg" alt="Card image cap"style="width:70px; height:70px ;padding-top: 10px; padding-left: 10px; margin-left:30%;">
+                    <div class="card-body">
+                      <h3 style="text-align: center;">Trading</h3>
+                      <p class="card-text">Tellus litora curabitur consequat risus vestibulum purus leo tempus adipiscing vitae ut neque sem.</p>
+                    </div>
+                  </div>
+                </div><div class="col-sm-4 pl-4">
+                  <div  data-aos="zoom-in-up"class="cards" style="width: 18rem;border-radius: 12px; border: 3px solid;box-shadow: 4px 4px 4px rgba(247, 238, 238, 0.5);">
+                    <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjae8s7nnFCpJ9zMySavn88-7R-mzOyYiVwA&usqp=CAU" alt="Card image cap"style="width:70px; height:70px ;padding-top: 10px; padding-left: 10px; margin-left:30%;">
+                    <div class="card-body">
+                      <h3 style="text-align: center;">Mutual Friend</h3>
+                      <p class="card-text">Tellus litora curabitur consequat risus vestibulum purus leo tempus adipiscing vitae ut neque sem.</p>
+                    </div>
+                  </div>
+                     </div>
+                  </div>
+                  <div class="row" style="padding-left: 40px;">
+              
+                <div class="col-sm-4 pl-4" >
+                  <div data-aos="zoom-in-up" class="cards" style="width: 18rem;border-radius: 12px; border: 3px solid;  box-shadow: 4px 4px 4px rgba(247, 238, 238, 0.5);">
+                      <img class="card-img-top" src="https://cdn-icons-png.flaticon.com/512/3953/3953553.png" alt="Card image cap" style="width:70px; height:70px ;padding-top: 10px; padding-left: 10px; margin-left:30%;">
+                    <div class="card-body">
+                      <h3 style="text-align: center;">Wealth </h3>
+                      <p class="card-text">Tellus litora curabitur consequat risus vestibulum purus leo tempus adipiscing vitae ut neque sem.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4 pl-4">
+                  <div data-aos="zoom-in-up" class="cards" style="width: 18rem;border-radius: 12px; border: 3px solid;box-shadow: 4px 4px 4px rgba(247, 238, 238, 0.5);">
+                    <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaN8QUJa7iLVN3Wpj9q3i20ReDa4P07xCrvw&usqp=CAU" alt="Card image cap"style="width:70px; height:70px ;padding-top: 10px; padding-left: 10px; margin-left:30%;">
+                    <div class="card-body">
+                      <h3 style="text-align: center;">Crypto Investment</h3>
+                      <p class="card-text">Tellus litora curabitur consequat risus vestibulum purus leo tempus adipiscing vitae ut neque sem.</p>
+                    </div>
+                  </div>
+                </div><div class="col-sm-4 pl-4">
+                  <div  data-aos="zoom-in-up"class="cards" style="width: 18rem;border-radius: 12px; border: 3px solid;box-shadow: 4px 4px 4px rgba(247, 238, 238, 0.5);">
+                    <img class="card-img-top" src="https://thumbs.dreamstime.com/b/crypto-invest-icon-trendy-logo-concept-white-b-background-cryptocurrency-economy-finance-collection-suitable-use-131189176.jpg" alt="Card image cap"style="width:70px; height:70px ;padding-top: 10px; padding-left: 10px; margin-left:30%;">
+                    <div class="card-body">
+                      <h3 style="text-align: center;">Advisory</h3>
+                      <p class="card-text">Tellus litora curabitur consequat risus vestibulum purus leo tempus adipiscing vitae ut neque sem.</p>
+                    </div>
+                  </div>
+                     </div>
+                  </div>
+                </div>
+
+                <div class="container" style="margin: 0 auto;padding-left: 20px; padding-right: 20px;">
+                  <div class="row">
+                      <div class="col sm-4"data-aos="flip-left" style="margin-top: 60px;">
+                          <img src="https://webkit.moxcreative.com/invoux/wp-content/uploads/sites/12/2023/05/happy-asian-man-tablet-or-success-fist-on-isolated-studio-background-for-financial-growth-stock-m-e1684670451322.jpg" width="450" height="500" style="margin-top: 40px;"id="image">
+                      </div>
+                      <div class="col sm-4" style="margin-top: 80px;">
+                        <h5 style="color: rgb(57, 236, 57);">WHY CHOOSE US</h5>
+
+                        <h1 style="color: aliceblue; margin-top: 20px;">Invest with a calculated mind, benefit with wealth</h1>
+                        <p style="color: aliceblue; text-align: justify; margin-top: 40px;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:large;">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+                        <div class="row">
+                          <div class="col"data-aos="fade-left">
+                            <h4 style="color: antiquewhite; "><i class="fa-solid fa-circle-exclamation" style="color:rgb(221, 16, 153);"></i><b>  Ease of transaction with DTRX trading tools</b></h4>
+                            <p style="color: aliceblue; margin-left: 30px; text-align: justify;">Arcu platea semper mattis purus quis praesent condimentum senectus. Platea fringilla sagittis tristique lorem ultricies.</p>
+                            <h4 style="color: antiquewhite; "><i class="fa-solid fa-circle-exclamation" style="color:rgb(221, 16, 153);"></i><b>  Friendly platform for beginner traders</b></h4>
+                            <p style="color: aliceblue; margin-left: 30px; text-align: justify;">Arcu platea semper mattis purus quis praesent condimentum senectus. Platea fringilla sagittis tristique lorem ultricies.</p>
+                            <h4 style="color: antiquewhite; "><i class="fa-solid fa-circle-exclamation" style="color:rgb(221, 16, 153);"></i><b>  Multiple market</b></h4>
+                            <p style="color: aliceblue; margin-left: 30px; text-align: justify;">Arcu platea semper mattis purus quis praesent condimentum senectus. Platea fringilla sagittis tristique lorem ultricies.</p>                            
+                            
+                          </div>
+                          
+                        </div>
+                      </div>
+            
+                  </div>
+            
+               </div>
+
+ </div>
+ <div id="services">
+  <h5 style="color: green; text-align: center;margin-top: 100px;">WHAT WE OFFER</h5>
+<h1 style="color:aliceblue; text-align: center;">Unlock financial freedom with smart choices</h1>
+<div id="btn1" style="margin-top: 70px;">
+  <div class="card-group mb-3" style="margin-top: 40px;background-color: rgb(122, 6, 168);">
+    <div class="card mr-3" >
+      <img class="card-img-top img-fluid" src="https://navi.com/blog/wp-content/uploads/2022/06/wealth-management.jpg" alt="Card image cap" style="width: 500px; height: 300px; margin-left: 8px;  border: 2px solid black;" >
+      <div class="overlay">
+        <div class="text">
+          <h3 style="text-align: center;">Wealth Management</h3>
+          <p style="text-align: justify;">Integer mus blandit dictumst ex id nunc congue vulputate inceptos quisque et. Commodo molestie enim ipsum ac ex class faucibus porttitor.</p>
+        </div>
+      </div>
+    </div>
+    <div class="card mr-3">
+      <img class="card-img-top img-fluid" src="https://career.webindia123.com/career/options/images/invest.jpg" alt="Card image cap" style="width: 500px; height: 300px; margin-left: 8px; border: 2px solid black;" >
+      <div class="overlay">
+        <div class="text">
+          <h3 style="text-align: center;">Invest Management</h3>
+          <p style="text-align: justify;">Integer mus blandit dictumst ex id nunc congue vulputate inceptos quisque et. Commodo molestie enim ipsum ac ex class faucibus porttitor.</p>
+        </div>
+      </div>
+    </div>
+    <div class="card mr-3">
+      <img class="card-img-top img-fluid" src="https://www.benchmarkcompany.com/wp-content/uploads/2023/01/market-1024x684.jpg" alt="Card image cap"style="width: 500px; height: 300px; margin-left: 8px; border: 2px solid black; ">
+      <div class="overlay">
+        <div class="text">
+          <h3 style="text-align: center;">Sales & Trading</h3>
+          <p style="text-align: justify;">Integer mus blandit dictumst ex id nunc congue vulputate inceptos quisque et. Commodo molestie enim ipsum ac ex class faucibus porttitor.</p>
+        </div>
+      </div>
+    </div>
+</div>
+<div class="card-group mb-3">
+  <div class="card mr-3" >
+    <img class="card-img-top img-fluid" src="https://www.investopedia.com/thmb/w2i4B0jDPTBCT_MeAYCgxfp3IQI=/1500x1000/filters:no_upscale():max_bytes(150000):strip_icc()/Primary_Images-421ad583334747108aab43b54152822f.jpg" alt="Card image cap" style="width: 500px; height: 300px; margin-left: 8px; border: 2px solid black;">
+    <div class="overlay">
+      <div class="text">
+        <h3 style="text-align: center;">Crypto Investment</h3>
+        <p style="text-align: justify;">Integer mus blandit dictumst ex id nunc congue vulputate inceptos quisque et. Commodo molestie enim ipsum ac ex class faucibus porttitor.</p>
+      </div>
+    </div>
+  </div>
+  <div class="card mr-3">
+    <img class="card-img-top img-fluid" src="https://image.cnbcfm.com/api/v1/image/107017923-1645373318428-gettyimages-1366475373-2022_jan_02_olemedia_002.jpeg?v=1648669888" alt="Card image cap" style="width: 500px; height: 300px; margin-left: 8px;  border: 2px solid black; ">
+    <div class="overlay">
+      <div class="text">
+        <h3 style="text-align: center;">Instant Exchange</h3>
+        <p style="text-align: justify;">Integer mus blandit dictumst ex id nunc congue vulputate inceptos quisque et. Commodo molestie enim ipsum ac ex class faucibus porttitor.</p>
+      </div>
+    </div>
+  </div>
+  <div class="card mr-3">
+    <img class="card-img-top img-fluid" src="https://fhg-capital.co/assets/img/rules-main.jpg" alt="Card image cap"style="width: 500px; height: 300px; margin-left: 8px;  border: 2px solid black; ">
+    <div class="overlay">
+      <div class="text">
+        <h3 style="text-align: center;">Fund Security</h3>
+        <p style="text-align: justify;">Integer mus blandit dictumst ex id nunc congue vulputate inceptos quisque et. Commodo molestie enim ipsum ac ex class faucibus porttitor.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>  
+
+ </div>
+
+
+ <div data-aos="fade-up" style="background-image: url('https://assets.entrepreneur.com/content/3x2/2000/1680806731-shutterstock-1940652163.jpg?format=pjeg&auto=webp&crop=4:3'); width: 100%; border-radius: 12px;">
+  <div class="row">
+    <div class="col-sm-4 ">
+      <h1 style="padding-top: 10px; padding-left: 40px; color: aliceblue; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Origins</h1>
+      <h5 style="padding-left: 40px;color: aliceblue; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Environmental care is the most profitable investment.</h5>
+    </div>
+    <div class="col-sm-8" >
+      <p style="padding-top: 10px; padding-right: 30px; padding-left: 30px; color: aliceblue;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; text-align: justify; padding-right: 20px;">Enim adipiscing feugiat per dis sem. Auctor duis parturient quisque lorem aenean viverra. Justo cubilia turpis litora ipsum erat fermentum pellentesque maximus torquent. Dictumst sed suscipit purus interdum auctor nam congue ultricies lorem torquent ipsum. Nunc lectus justo curabitur litora rhoncus malesuada quam eu dictumst quisque. Facilisi class sagittis vestibulum porta eu dignissim elit lorem.</p>
+
+        <p style="padding-top: 10px; padding-right: 30px; padding-left: 30px; color: aliceblue; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;" >Sollicitudin ridiculus efficitur eleifend malesuada a. Purus integer tellus sed ligula tempus ullamcorper ante. Tellus taciti torquent turpis dapibus curae habitant pulvinar letius fermentum. Malesuada eros libero augue posuere sagittis nam vitae ante aenean. Potenti adipiscing augue sollicitudin nunc consequat.</p>
+        
+        <p style="padding-top: 10px; padding-right: 30px; padding-left: 30px; color: aliceblue;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Class hendrerit eros potenti proin ornare nec blandit. Libero magnis class viverra consectetur turpis sed dui vivamus et. Penatibus taciti tempus sed torquent blandit maximus feugiat. Laoreet euismod eros senectus penatibus fames sollicitudin cursus mattis bibendum finibus tortor. Malesuada sem amet nisl sodales quisque. Natoque nibh hendrerit suscipit blandit netus scelerisque lectus.</p>
+    </div>
+  </div>    
+</div>
+
+<div>
+
+  <div style="margin-top: 60px;">
+    <h1 style="text-align: center;color: #f7f0f0;">GetTrade is trusted by 6+ million<br> users in 175+ countries</h1>
+    <p style="text-align: center;color: #f7f0f0;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+ 
+    <div class="gallery"style="margin-left:20%;">
+      <a target="_blank" href="">
+        <img src="https://kitnew.moxcreative.com/gettrade/wp-content/uploads/sites/8/2022/11/logoipsum-236-1.png" alt="Cinque Terre" width="600" height="400">
+      </a>
+    </div>
+    
+    <div class="gallery">
+      <a target="_blank" href="">
+        <img src="https://kitnew.moxcreative.com/gettrade/wp-content/uploads/sites/8/2022/11/logoipsum-289.png" alt="Forest" width="600" height="400">
+      </a>
+    </div>
+    
+    <div class="gallery">
+      <a target="_blank" href="">
+        <img src="https://kitnew.moxcreative.com/gettrade/wp-content/uploads/sites/8/2022/11/logoipsum-285.png" alt="Northern Lights" width="600" height="400">
+      </a>
+    </div>
+    
+    <div class="gallery">
+      <a target="_blank" href="">
+        <img src="https://kitnew.moxcreative.com/gettrade/wp-content/uploads/sites/8/2022/11/logoipsum-236-1.png" alt="Mountains" width="600" height="400">
+      </a>
+    </div>
+    
+  </div>
+ 
+</div>
+ </div>
+                
+</div>
+
+
+   
+
+
+
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>
